@@ -1,82 +1,90 @@
-🏥 Hospital Vida Saudável — Banco de Dados em SQL
+
+# 🏥 Hospital Vida Saudável — Banco de Dados MySQL
+
+## 📌 Descrição
+
+O **Hospital Vida Saudável** é um banco de dados relacional desenvolvido para simular a estrutura de um sistema hospitalar real. Ele organiza informações de pacientes, médicos, consultas, setores e internações, garantindo integridade e facilitando consultas eficientes.
+
+---
+
+## 🎯 Objetivo do Projeto
+
+O objetivo deste projeto é praticar:
+
+* modelagem de dados com enfoque em ambiente hospitalar;
+* criação de tabelas relacionais e definição de chaves primárias e estrangeiras;
+* escrita de scripts SQL organizados e profissionais;
+* boas práticas de documentação e estrutura de projeto no GitHub.
+
+---
+
+## 📚 O que Aprendi
+
+Ao concluir este projeto, foi possível aprender e reforçar conceitos como:
+
+* organização lógica de entidades hospitalares;
+* criação de relacionamentos 1:N e N:N;
+* aplicação de integridade referencial no MySQL;
+* uso adequado de scripts SQL para estruturar e popular um banco de dados;
+* documentação clara para facilitar execução por terceiros.
+
+---
+
+## ▶️ Como Executar o Script SQL
+
+1. Certifica-te de ter o MySQL instalado.
+2. Abre o MySQL Workbench ou outro cliente.
+3. Cria um novo schema (ou usa um existente).
+4. No painel *Navigator*, clica em **File → Open SQL Script**.
+5. Seleciona o arquivo:
+
+   ```
+   /sql_scripts/hospital.sql
+   ```
+6. Clica no ícone de raio (**Execute**) para rodar o script.
+7. As tabelas serão criadas automaticamente no schema selecionado.
+
+---
 
 
-Este projeto consiste na criação de um banco de dados para o hospital fictício "Hospital Vida Saudável", projetado com o objetivo de armazenar e organizar informações essenciais sobre pacientes, médicos, consultas, internações, enfermeiros, medicamentos e prescrições.
-O banco foi construído utilizando comandos DDL e DML do MySQL, simulando o funcionamento real de um sistema hospitalar.
+### 🧩 O que é um Banco de Dados Relacional
 
-🎯 Objetivo do Projeto
+É um sistema organizado em **tabelas** interligadas por **chaves primárias** e **chaves estrangeiras**, permitindo armazenar informações sem duplicação e com integridade.
 
-O objetivo deste trabalho foi:
+---
 
-Praticar a criação de bancos de dados relacionais utilizando MySQL.
+### 📝 Modelo Entidade-Relacionamento (MER)
 
-Aprender a estruturar tabelas usando DDL (Data Definition Language).
+O MER ajuda a visualizar:
 
-Manipular dados utilizando DML (Data Manipulation Language).
+* as entidades (Paciente, Médico, Consulta…),
+* seus atributos,
+* e os tipos de relacionamento (1:N, N:N).
 
-Compreender conceitos como chaves primárias, estrangeiras, relacionamentos e integridade referencial.
+É um passo essencial antes de criar as tabelas no SQL.
 
-Organizar um projeto em um repositório GitHub de forma profissional.
+---
 
-📘 O que eu aprendi
+### 💻 O que é SQL
 
-Ao concluir este projeto, aprendi:
+SQL é a linguagem usada para:
 
-Como planejar um banco de dados a partir de um cenário real.
+* criar tabelas (**CREATE**),
+* inserir registros (**INSERT**),
+* consultar dados (**SELECT**),
+* atualizar (**UPDATE**) e remover (**DELETE**).
 
-A diferença prática entre DDL e DML.
+---
 
-Como criar tabelas, definir relacionamentos e configurar chaves estrangeiras.
+### 🏥 Relevância no Projeto
 
-Como inserir, atualizar e consultar dados no MySQL.
+Ao desenvolver o Hospital Vida Saudável, tu praticas:
 
-Como salvar scripts em arquivos .sql e executá-los em diferentes ambientes.
+* como estruturar informações reais,
+* como definir relações corretas,
+* como garantir integridade dos dados,
+* e como escrever SQL limpo e funcional.
 
-A importância da organização de um projeto dentro de pastas e documentação.
+---
 
-▶️ Como executar o script SQL
-1. Baixe o arquivo
-
-No repositório, abra a pasta:
-
-sql_scripts/
-
-
-Baixe o arquivo:
-
-hospital_vida_saudavel.sql
-
-2. Abra no MySQL Workbench
-
-Abra o Workbench
-
-Clique em File → Open SQL Script
-
-Selecione o arquivo baixado
-
-3. Execute o script
-
-Depois de abrir o script:
-
-Clique no ícone do raio (Execute All)
-ou
-
-Pressione Ctrl + Shift + Enter
-
-📌 Isso irá:
-
-Criar o banco hospital_vida_saudavel
-
-Criar todas as tabelas
-
-Inserir dados iniciais (pacientes, médicos, medicamentos, etc.)
-
-4. Atualize o esquema
-
-Se o banco não aparecer imediatamente:
-
-Click direito em Schemas → Refresh All
-
-✔️ Pronto!
-
-O banco estará disponível para consultas, testes e alterações conforme necessário.
+Se quiser, eu posso **adicionar uma seção de exemplo de consultas SQL**, **diagramas**, ou deixar o README mais visual e estilizado. Quer que eu melhore algo?
