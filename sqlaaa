@@ -1,0 +1,113 @@
+-- ============================================
+-- BANCO DE DADOS: Hospital Vida Saudável
+-- Autor: [Flávio]
+-- Descrição: Estrutura de tabelas e dados iniciais
+-- ============================================
+
+
+CREATE DATABASE hospital_vida_saudavel;
+USE hospital_vida_saudavel;
+
+
+CREATE TABLE pacientes (
+    id_paciente INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    cpf CHAR(11) UNIQUE,
+    data_nascimento DATE,
+    telefone VARCHAR(20),
+    endereco VARCHAR(150)
+);
+
+
+CREATE TABLE medicos (
+    id_medico INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    especialidade VARCHAR(50),
+    crm VARCHAR(20) UNIQUE,
+    telefone VARCHAR(20)
+);
+
+
+CREATE TABLE enfermeiros (
+    id_enfermeiro INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    turno ENUM('Manhã', 'Tarde', 'Noite'),
+    telefone VARCHAR(20)
+);
+
+
+CREATE TABLE consultas (
+    id_consulta INT AUTO_INCREMENT PRIMARY KEY,
+    id_paciente INT,
+    id_medico INT,
+    data_consulta DATETIME,
+    diagnostico TEXT,
+    FOREIGN KEY (id_paciente) REFERENCES pacientes(id_paciente),
+    FOREIGN KEY (id_medico) REFERENCES medicos(id_medico)
+);
+
+
+CREATE TABLE internacoes (
+    id_internacao INT AUTO_INCREMENT PRIMARY KEY,
+    id_paciente INT,
+    id_enfermeiro INT,
+    data_entrada DATE,
+    data_saida DATE,
+    quarto VARCHAR(10),
+    FOREIGN KEY (id_paciente) REFERENCES pacientes(id_paciente),
+    FOREIGN KEY (id_enfermeiro) REFERENCES enfermeiros(id_enfermeiro)
+);
+
+
+CREATE TABLE medicamentos (
+    id_medicamento INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    dosagem VARCHAR(50),
+    validade DATE
+);
+
+
+CREATE TABLE prescricoes (
+    id_prescricao INT AUTO_INCREMENT PRIMARY KEY,
+    id_consulta INT,
+    id_medicamento INT,
+    quantidade INT,
+    instrucoes TEXT,
+    FOREIGN KEY (id_consulta) REFERENCES consultas(id_consulta),
+    FOREIGN KEY (id_medicamento) REFERENCES medicamentos(id_medicamento)
+);
+
+
+
+INSERT INTO pacientes (nome, cpf, data_nascimento, telefone, endereco) VALUES
+('Carlos Pereira', '12345678900', '1985-05-12', '11988887777', 'Rua das Flores, 100'),
+('Mariana Silva', '98765432100', '1990-10-30', '21999996666', 'Av. Brasil, 500');
+
+
+INSERT INTO medicos (nome, especialidade, crm, telefone) VALUES
+('Dr. João Almeida', 'Cardiologia', 'CRM12345', '11987654321'),
+('Dra. Ana Souza', 'Pediatria', 'CRM67890', '11911223344');
+
+
+INSERT INTO enfermeiros (nome, turno, telefone) VALUES
+('Pedro Lima', 'Manhã', '21988776655'),
+('Julia Mendes', 'Noite', '21999887766');
+
+
+INSERT INTO medicamentos (nome, dosagem, validade) VALUES
+('Paracetamol', '500mg', '2026-05-10'),
+('Amoxicilina', '250mg', '2025-12-01');
+
+
+INSERT INTO consultas (id_paciente, id_medico, data_consulta, diagnostico) VALUES
+(1, 1, '2025-11-10 09:00:00', 'Pressão alta'),
+(2, 2, '2025-11-11 15:30:00', 'Gripe comum');
+
+
+INSERT INTO internacoes (id_paciente, id_enfermeiro, data_entrada, data_saida, quarto) VALUES
+(1, 1, '2025-11-10', NULL, '102A');
+
+
+INSERT INTO prescricoes (id_consulta, id_medicamento, quantidade, instrucoes) VALUES
+(1, 1, 10, 'Tomar 1 comprimido de 8 em 8 horas'),
+(2, 2, 14, 'Tomar 1 cápsula a cada 12 horas');
