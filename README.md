@@ -116,4 +116,3 @@ Ao desenvolver o Hospital Vida Saudável, tu praticas:
 
 ---
 
-Se quiser, eu posso **adicionar uma seção de exemplo de consultas SQL**, **diagramas**, ou deixar o README mais visual e estilizado. Quer que eu melhore algo?
