@@ -30,20 +30,49 @@ Ao concluir este projeto, foi possível aprender e reforçar conceitos como:
 
 ---
 
-## ▶️ Como Executar o Script SQL
+Como executar o script SQL
+1. Baixe o arquivo
 
-1. Certifica-te de ter o MySQL instalado.
-2. Abre o MySQL Workbench ou outro cliente.
-3. Cria um novo schema (ou usa um existente).
-4. No painel *Navigator*, clica em **File → Open SQL Script**.
-5. Seleciona o arquivo:
+No repositório, abra a pasta:
 
-   ```
-   /sql_scripts/hospital.sql
-   ```
-6. Clica no ícone de raio (**Execute**) para rodar o script.
-7. As tabelas serão criadas automaticamente no schema selecionado.
+sql_scripts/
 
+Baixe o arquivo
+
+2. Abra no MySQL Workbench
+
+Abra o Workbench
+
+Clique em File → Open SQL Script
+
+Selecione o arquivo baixado
+
+3. Execute o script
+
+Depois de abrir o script:
+
+Clique no ícone do raio (Execute All)
+ou
+
+Pressione Ctrl + Shift + Enter
+
+📌 Isso irá:
+
+Criar o banco hospital_vida_saudavel
+
+Criar todas as tabelas
+
+Inserir dados iniciais (pacientes, médicos, medicamentos, etc.)
+
+4. Atualize o esquema
+
+Se o banco não aparecer imediatamente:
+
+Click direito em Schemas → Refresh All
+
+✔️ Pronto!
+
+O banco estará disponível para consultas, testes e alterações conforme necessário.
 ---
 
 
